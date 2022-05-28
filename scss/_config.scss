@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+$cyan: hsl(179, 62%, 43%);
+$bright-yellow: hsl(71, 73%, 54%);
+$light-gray: hsl(204, 43%, 93%);
+$grayish-blue: hsl(218, 22%, 67%);
+$white: white;
+$font-stack: 'Karla', sans-serif;
+
+@mixin flexProperty($prop1, $prop2, $prop3, $prop4) {
+    display: $prop1;
+    align-items: $prop2;
+    justify-content: $prop3;
+    flex-direction: $prop4;
+    
+}
+
+@mixin textProperty($prop1, $prop2, $prop3, $prop4: "") {
+    color: $prop1;
+    font-size: $prop2;
+    font-weight: $prop3;
+    line-height: unquote($prop4);
+}
+

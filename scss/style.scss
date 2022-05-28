@@ -1,0 +1,140 @@
+@import 'config';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    background-color: $light-gray;
+    font-family: $font-stack;
+    height: 100%;
+
+    .container {
+        height: 100%;
+        @include flexProperty(flex, center, center, column);
+
+        .wrapper-top {
+            @include flexProperty(flex, null, null, column);
+            background-color: $white;
+            padding: 40px;
+            border-radius: 7px 7px 0 0;
+            width: 650px;
+
+            h1 {
+                @include textProperty($cyan, 32px, 700, null);
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                @include textProperty($bright-yellow, 24px, 700, null);
+                margin-bottom: 10px;
+            }
+
+            p {
+                @include textProperty($grayish-blue, 16px, 400, 1.6);    
+            }
+
+        }
+
+        .wrapper-bottom {
+            @include flexProperty(flex, null, null, row);
+            width: 650px;
+
+            .wrapper-bottom-left {
+                @include flexProperty(flex, null, center, column);
+                background-color: $cyan;
+                width: 50%;
+                padding: 40px;
+                border-radius: 0 0 0 7px;
+
+                h2 {
+                    @include textProperty($light-gray, 16px, 700, null);
+                    margin-bottom: 20px;
+                }
+
+                h3 {
+                    @include textProperty($white, 36px, 700, null);
+                    @include flexProperty(flex, center, null, row);
+                    margin-bottom: 10px;
+                
+                    span {
+                        @include textProperty(darken($white, 20%), 16px, 400, null);
+                        padding-left: 10px;
+                    }
+                }
+                
+                p {
+                    @include textProperty($white, 16px, 400, null);
+                    margin-bottom: 40px;
+                }
+
+                button {
+                    width: 100%;
+                    padding: 15px 30px;
+                    border-radius: 7px;
+                    border: none;
+                    @include textProperty($white, 16px, 400, null);
+                    background-color: lighten( $bright-yellow, 5%);
+                }
+            }
+
+            .wrapper-bottom-right {
+                background-color: lighten($cyan, 10%);
+                width: 50%;
+                padding: 40px;
+                border-radius: 0 0 7px 0;
+
+                h2 {
+                    @include textProperty($white, 16px, 700, null);
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    @include textProperty($white, 16px, 400, 1.5);
+
+                }
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+
+            height: 960px;
+
+            .wrapper-top {
+                width: 350px;
+                padding: 30px;
+
+                h1 {
+                    @include textProperty($cyan, 24px, 700, null);
+                }
+    
+                h2 {
+                    @include textProperty($bright-yellow, 20px, 700, null);
+                }
+    
+                p {
+                    @include textProperty($grayish-blue, 14px, 400, 1.6);    
+                }
+            }
+
+            .wrapper-bottom {
+                @include flexProperty(flex, null, null, column);
+                width: 350px;
+
+                .wrapper-bottom-left {
+                    width: 100%;
+                    border-radius: 0;
+                    padding: 30px;
+                }
+            
+                .wrapper-bottom-right {
+                    width: 100%;
+                    border-radius: 0 0 7px 7px;
+                    padding: 30px;
+                }
+            }
+        }
+    }
+}
